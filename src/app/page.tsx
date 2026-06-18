@@ -1,6 +1,4 @@
 import { getStore, getStudentMap } from '@/lib/store'
-import { resetStore } from '@/lib/store'
-import { createSeedData } from '@/lib/seed'
 import { computeCourseResult, computeProgramPO, buildPOEvidenceTree } from '@/lib/engine'
 import { ALL_POS, PO_LABELS, PO_DESCRIPTIONS, attainmentLevel } from '@/lib/types'
 import type { PO_ID, POEvidenceTree } from '@/lib/types'
@@ -10,13 +8,6 @@ import { Badge } from '@/components/ui/badge'
 import Link from 'next/link'
 import { TrendingUp, BookOpen, Users, AlertTriangle } from 'lucide-react'
 import POEvidenceTrigger from './POEvidenceTrigger'
-
-function ensureSeed() {
-  const store = getStore()
-  if (store.programs.length === 0) {
-    resetStore(createSeedData())
-  }
-}
 
 function attainBadgeVariant(score: number | null): 'below' | 'border' | 'above' | 'secondary' {
   const level = attainmentLevel(score)
@@ -43,7 +34,6 @@ function AttainCell({ score }: { score: number | null }) {
 }
 
 export default function DashboardPage() {
-  ensureSeed()
   const store = getStore()
   const studentMap = getStudentMap()
 

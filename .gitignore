@@ -10,7 +10,6 @@ dist/
 *.tsbuildinfo
 
 # Data & uploads (runtime state, not source)
-data/store.json
 uploads/
 docs/
 
