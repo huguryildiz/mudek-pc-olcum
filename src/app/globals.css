@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #2B3A8C;
+    --color-primary-fg: #FFFFFF;
+    --color-canvas: #F5F7FA;
+    --color-ink: #161B26;
+    --color-border: #E3E7ED;
+    --color-surface: #FFFFFF;
+    --color-muted: #F1F4F8;
+    --color-muted-fg: #64748B;
+
+    /* Attainment tokens */
+    --color-below: #B4490F;
+    --color-border-attain: #B8860B;
+    --color-above: #0F766E;
+    --color-below-bg: #FEF3EE;
+    --color-border-bg: #FEFCE8;
+    --color-above-bg: #F0FDF4;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-canvas text-ink antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Tabular numbers for score columns */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  /* Attainment color classes */
+  .attain-below  { @apply text-attainment-below  bg-attainment-below-bg  border-attainment-below; }
+  .attain-border { @apply text-attainment-border  bg-attainment-border-bg border-attainment-border; }
+  .attain-above  { @apply text-attainment-above   bg-attainment-above-bg  border-attainment-above; }
+  .attain-none   { @apply text-muted-foreground   bg-muted                border-border; }
+}

@@ -1,0 +1,34 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MÜDEK PÇ Ölçüm Sistemi">
+  <defs>
+    <linearGradient id="bg" x1="14" y1="14" x2="186" y2="186" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B3A8C"/>
+      <stop offset="1" stop-color="#18245F"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Badge -->
+  <rect x="14" y="14" width="172" height="172" rx="42" fill="url(#bg)"/>
+
+  <!-- X-axis -->
+  <line x1="40" y1="152" x2="162" y2="152" stroke="white" stroke-width="3" stroke-linecap="round" stroke-opacity="0.25"/>
+
+  <!-- Bars (bottom y=152) -->
+  <!-- Bar 1: height 82 → top y=70 → above threshold → teal -->
+  <rect x="42" y="70" width="22" height="82" rx="4" fill="#0F766E"/>
+  <!-- Bar 2: height 50 → top y=102 → at threshold → amber -->
+  <rect x="72" y="102" width="22" height="50" rx="4" fill="#B8860B"/>
+  <!-- Bar 3: height 30 → top y=122 → below threshold → red -->
+  <rect x="102" y="122" width="22" height="30" rx="4" fill="#B4490F"/>
+  <!-- Bar 4: height 90 → top y=62 → above → teal -->
+  <rect x="132" y="62" width="22" height="90" rx="4" fill="#0F766E"/>
+
+  <!-- Threshold line (dashed) at y=102 -->
+  <line x1="36" y1="102" x2="164" y2="102" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 5" stroke-opacity="0.55"/>
+
+  <!-- Upward trend arrow / line over bars -->
+  <polyline points="53,78 83,112 113,130 143,70" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9" fill="none"/>
+  <circle cx="53"  cy="78"  r="4" fill="white" fill-opacity="0.9"/>
+  <circle cx="83"  cy="112" r="4" fill="white" fill-opacity="0.9"/>
+  <circle cx="113" cy="130" r="4" fill="white" fill-opacity="0.9"/>
+  <circle cx="143" cy="70"  r="4" fill="white" fill-opacity="0.9"/>
+</svg>
