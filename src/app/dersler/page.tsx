@@ -46,13 +46,13 @@ export default function CoursesPage() {
           return (
             <Card key={course.id} className="hover:border-primary/50 transition-colors">
               <CardContent className="p-6">
-                <div className="flex items-start justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <BookOpen className="w-6 h-6 text-primary" />
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
                         <h2 className="text-lg font-bold text-ink">{course.code}</h2>
                         <Badge variant="outline">{course.semester}</Badge>
                       </div>
@@ -61,7 +61,7 @@ export default function CoursesPage() {
                         {course.instructors.join(', ')}
                       </p>
 
-                      <div className="flex items-center gap-4 mt-3 text-xs text-muted-foreground">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-3 text-xs text-muted-foreground">
                         <span className="flex items-center gap-1">
                           <Users className="w-3.5 h-3.5" />
                           {enrollments.length} öğrenci
@@ -78,16 +78,16 @@ export default function CoursesPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 shrink-0">
                     <Link
                       href={`/dersler/${course.id}/notlar`}
-                      className="text-sm px-4 py-2 rounded-md border border-border hover:bg-muted transition-colors text-ink"
+                      className="text-sm px-4 py-3 rounded-md border border-border hover:bg-muted transition-colors text-ink"
                     >
                       Not Girişi
                     </Link>
                     <Link
                       href={`/dersler/${course.id}`}
-                      className="inline-flex items-center text-sm px-4 py-2 rounded-md bg-primary text-white hover:bg-primary/90 transition-colors"
+                      className="inline-flex items-center text-sm px-4 py-3 rounded-md bg-primary text-white hover:bg-primary/90 transition-colors"
                     >
                       Detay
                       <ChevronRight className="w-4 h-4 ml-1" />
@@ -115,7 +115,7 @@ export default function CoursesPage() {
                     )
                   })}
                 </div>
-                <div className="mt-1 grid text-xs text-muted-foreground" style={{ gridTemplateColumns: 'repeat(11, 1fr)' }}>
+                <div className="mt-1 hidden sm:grid text-xs text-muted-foreground" style={{ gridTemplateColumns: 'repeat(11, 1fr)' }}>
                   {ALL_POS.map((poId, i) => {
                     const num = i + 1
                     const isOdd = num % 2 === 1

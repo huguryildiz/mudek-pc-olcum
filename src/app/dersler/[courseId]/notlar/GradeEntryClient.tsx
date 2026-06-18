@@ -125,7 +125,7 @@ function ManualEntryTab({
           </CardHeader>
           <CardContent className="p-0">
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className="w-full min-w-max text-sm">
                 <thead>
                   <tr className="border-b border-border bg-muted/30">
                     <th className="px-4 py-2.5 text-left font-medium text-ink w-40">Öğrenci</th>
@@ -159,7 +159,7 @@ function ManualEntryTab({
                                 min={0}
                                 max={item.maxRaw}
                                 step="0.5"
-                                className="w-20 text-center h-8 text-sm"
+                                className="w-20 text-center h-10 text-sm"
                                 value={scores[student.enrollmentId]?.[item.id] ?? ''}
                                 placeholder="–"
                                 onChange={e => handleChange(student.enrollmentId, item.id, e.target.value)}

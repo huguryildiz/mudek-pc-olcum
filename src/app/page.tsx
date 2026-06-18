@@ -87,7 +87,7 @@ export default function DashboardPage() {
       </div>
 
       {/* KPI cards */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <Card>
           <CardContent className="pt-6">
             <div className="flex items-center gap-3">
@@ -140,7 +140,7 @@ export default function DashboardPage() {
           <CardTitle>Program Çıktıları Başarı Matrisi</CardTitle>
         </CardHeader>
         <CardContent className="p-0 overflow-x-auto">
-          <table className="w-full text-sm border-collapse">
+          <table className="w-full min-w-[560px] text-sm border-collapse">
             <thead>
               <tr className="border-b border-border">
                 <th className="px-4 py-3 text-left font-medium text-muted-foreground w-48">Program Çıktısı</th>
@@ -181,8 +181,8 @@ export default function DashboardPage() {
       </Card>
 
       {/* Legend + quick links */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4 text-xs text-muted-foreground">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:justify-between">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <span className="inline-block w-3 h-3 rounded-sm bg-attainment-above-bg border border-attainment-above/30" />
             Hedefte (&ge;3.0)
@@ -211,7 +211,7 @@ export default function DashboardPage() {
           <CardTitle>Öğrenci Bazlı Program Çıktıları (Ek-2)</CardTitle>
         </CardHeader>
         <CardContent className="p-0 overflow-x-auto">
-          <table className="w-full text-sm border-collapse">
+          <table className="w-full min-w-[700px] text-sm border-collapse">
             <thead>
               <tr className="border-b border-border">
                 <th className="px-4 py-3 text-left font-medium text-muted-foreground">Öğrenci</th>

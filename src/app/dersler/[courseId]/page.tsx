@@ -11,7 +11,7 @@ import CourseItemsClient from './CourseItemsClient'
 
 function AttainLegend() {
   return (
-    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted-foreground">
       <span className="flex items-center gap-1.5">
         <span className="inline-block w-3 h-3 rounded-sm bg-attainment-above-bg border border-attainment-above/30" />
         Hedefte (&ge;3.0)
@@ -70,7 +70,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ c
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
             <Link href="/dersler" className="hover:text-primary">Dersler</Link>
@@ -82,7 +82,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ c
         </div>
         <Link
           href={`/dersler/${course.id}/notlar`}
-          className="inline-flex items-center text-sm px-4 py-2 rounded-md bg-primary text-white hover:bg-primary/90 transition-colors"
+          className="inline-flex items-center text-sm px-4 py-3 rounded-md bg-primary text-white hover:bg-primary/90 transition-colors self-start"
         >
           Not Girişi
         </Link>
@@ -98,7 +98,7 @@ export default async function CourseDetailPage({ params }: { params: Promise<{ c
           {(() => {
             const activePOs = ALL_POS.filter(poId => result.coursePOAvg[poId] !== null)
             return (
-              <table className="w-full text-sm border-collapse">
+              <table className="w-full min-w-[500px] text-sm border-collapse">
                 <thead>
                   <tr className="border-b border-border">
                     <th className="px-4 py-3 text-left font-medium text-muted-foreground">Öğrenci</th>

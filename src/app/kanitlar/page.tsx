@@ -34,17 +34,17 @@ export default function EvidencePage() {
           <CardHeader>
             <CardTitle>Yüklenen Dosyalar ({store.evidenceFiles.length})</CardTitle>
           </CardHeader>
-          <CardContent className="p-0">
-            <table className="w-full text-sm">
+          <CardContent className="p-0 overflow-x-auto">
+            <table className="w-full min-w-[700px] text-sm">
               <thead>
                 <tr className="border-b border-border bg-muted/30">
-                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Dosya Adı</th>
-                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Ders</th>
-                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Kategori</th>
-                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Bağlı Sorular</th>
-                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Boyut</th>
-                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Yükleyen</th>
-                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">Tarih</th>
+                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground whitespace-nowrap">Dosya Adı</th>
+                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground whitespace-nowrap">Ders</th>
+                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground whitespace-nowrap">Kategori</th>
+                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground whitespace-nowrap">Bağlı Sorular</th>
+                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground whitespace-nowrap">Boyut</th>
+                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground whitespace-nowrap">Yükleyen</th>
+                  <th className="px-4 py-2.5 text-left font-medium text-muted-foreground whitespace-nowrap">Tarih</th>
                 </tr>
               </thead>
               <tbody>

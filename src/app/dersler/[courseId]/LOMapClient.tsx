@@ -138,7 +138,7 @@ function LOPOMatrix({
                           <button
                             onClick={() => handleClick(g.lo.id, poId as PO_ID)}
                             disabled={pending}
-                            className="min-w-[3.25rem] h-7 rounded-md text-xs font-mono font-medium transition-all hover:ring-2 hover:ring-primary/20 disabled:opacity-50 flex items-center justify-center mx-auto"
+                            className="min-w-[3.25rem] h-10 rounded-md text-xs font-mono font-medium transition-all hover:ring-2 hover:ring-primary/20 disabled:opacity-50 flex items-center justify-center mx-auto"
                             title={`${g.lo.code} → ${poDisplayId(poId)}: ${pct === 0 ? 'katkı yok' : `%${pct}`}`}
                           >
                             {pct === 0 ? (
@@ -339,7 +339,7 @@ function LORow({
 
         {/* Edit mode: assessment items + PO contributions */}
         {editing && (
-          <div className="mt-4 ml-[3.25rem] space-y-4">
+          <div className="mt-4 sm:ml-[3.25rem] space-y-4">
             {allItems.length === 0 ? (
               <p className="text-xs text-muted-foreground italic">
                 Henüz ölçüm kalemi yok. Önce "Ölçüm Kalemleri" bölümünden kalem ekleyin.
@@ -412,7 +412,7 @@ function LORow({
                               type="button"
                               onClick={() => setPoDrafts(d => ({ ...d, [poId]: String(val) }))}
                               className={[
-                                'px-1.5 py-1 text-[10px] font-mono transition-colors',
+                                'px-2 py-2 text-xs font-mono transition-colors',
                                 i > 0 ? 'border-l border-primary/15' : '',
                                 active
                                   ? 'bg-primary text-white'

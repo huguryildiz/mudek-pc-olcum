@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className="min-h-screen bg-canvas">
         <div className="flex min-h-screen">
           <Sidebar />
-          <main className="flex-1 ml-64 p-8 overflow-auto">
+          <main className="flex-1 sm:ml-64 pt-16 sm:pt-0 pb-20 sm:pb-0 p-4 sm:p-8 overflow-auto">
             {children}
           </main>
         </div>

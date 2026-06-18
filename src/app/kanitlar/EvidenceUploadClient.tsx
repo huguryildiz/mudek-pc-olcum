@@ -87,7 +87,7 @@ export default function EvidenceUploadClient({ courses, items }: { courses: Cour
     <Card>
       <CardContent className="pt-6">
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="space-y-1.5">
               <Label htmlFor="courseId">Ders</Label>
               <select
@@ -122,7 +122,7 @@ export default function EvidenceUploadClient({ courses, items }: { courses: Cour
                 type="file"
                 accept=".pdf,.xlsx,.docx,.png,.jpg"
                 onChange={e => { setFile(e.target.files?.[0] ?? null); setStatus('idle') }}
-                className="flex h-9 w-full rounded-md border border-border bg-surface px-3 py-1.5 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="flex h-11 w-full rounded-md border border-border bg-surface px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               />
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function EvidenceUploadClient({ courses, items }: { courses: Cour
                             onClick={() => toggleItem(it.id)}
                             title={it.label}
                             className={
-                              'rounded-md border px-2 py-1 text-xs transition-colors ' +
+                              'rounded-md border px-3 py-2 text-xs transition-colors ' +
                               (active
                                 ? 'border-primary bg-primary/10 text-primary font-medium'
                                 : 'border-border text-ink hover:bg-muted')

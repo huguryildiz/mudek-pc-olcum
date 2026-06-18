@@ -25,7 +25,7 @@ export default function BBOPage() {
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
         {Object.entries({
           'Ders': stats.courses,
           'Öğrenci': stats.students,
@@ -51,7 +51,8 @@ export default function BBOPage() {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-2">
-          <div className="font-mono text-xs text-muted-foreground space-y-1.5 bg-muted/30 p-4 rounded-md">
+          <div className="overflow-x-auto">
+          <div className="font-mono text-xs text-muted-foreground space-y-1.5 bg-muted/30 p-4 rounded-md min-w-max">
             <p className="text-ink font-medium">mudek-bbo.zip</p>
             <p className="pl-4">├── EK-2_Program_CO_Matrix.xlsx</p>
             <p className="pl-4">├── EK-2_Student_CO_Table.xlsx</p>
@@ -68,6 +69,7 @@ export default function BBOPage() {
             ) : (
               <p className="pl-4">└── evidence/ <span className="text-muted-foreground">(boş)</span></p>
             )}
+          </div>
           </div>
 
           <div className="pt-2">

@@ -20,20 +20,60 @@ const navItems = [
 export default function Sidebar() {
   const pathname = usePathname()
   return (
-    <aside className="fixed inset-y-0 left-0 w-64 bg-surface border-r border-border flex flex-col shadow-card z-10">
-      {/* Logo */}
-      <div className="px-4 py-4 border-b border-border flex items-center gap-3">
-        <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shrink-0">
-          <BarChart3 className="w-5 h-5 text-white" />
+    <>
+      {/* Desktop sidebar */}
+      <aside className="hidden sm:flex fixed inset-y-0 left-0 w-64 bg-surface border-r border-border flex-col shadow-card z-10">
+        {/* Logo */}
+        <div className="px-4 py-4 border-b border-border flex items-center gap-3">
+          <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center shrink-0">
+            <BarChart3 className="w-5 h-5 text-white" />
+          </div>
+          <div className="leading-tight">
+            <p className="text-sm font-bold text-ink">MÜDEK PÇ</p>
+            <p className="text-xs text-muted-foreground">Ölçüm Sistemi</p>
+          </div>
         </div>
-        <div className="leading-tight">
-          <p className="text-sm font-bold text-ink">MÜDEK PÇ</p>
-          <p className="text-xs text-muted-foreground">Ölçüm Sistemi</p>
-        </div>
-      </div>
 
-      {/* Navigation */}
-      <nav className="flex-1 px-3 py-4 space-y-1">
+        {/* Navigation */}
+        <nav className="flex-1 px-3 py-4 space-y-1">
+          {navItems.map(({ href, label, icon: Icon }) => {
+            const active = href === '/' ? pathname === '/' : pathname.startsWith(href)
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={cn(
+                  'flex items-center gap-3 px-3 py-3 rounded-md text-sm font-medium transition-colors',
+                  active
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-muted-foreground hover:bg-muted hover:text-ink',
+                )}
+              >
+                <Icon className="w-4 h-4 shrink-0" />
+                {label}
+              </Link>
+            )
+          })}
+        </nav>
+
+        {/* Footer */}
+        <div className="px-6 py-4 border-t border-border">
+          <p className="text-xs text-muted-foreground">
+            Elektrik-Elektronik Müh.
+          </p>
+        </div>
+      </aside>
+
+      {/* Mobile top header */}
+      <header className="sm:hidden fixed top-0 left-0 right-0 z-20 bg-surface border-b border-border flex items-center gap-3 px-4 py-3">
+        <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
+          <BarChart3 className="w-4 h-4 text-white" />
+        </div>
+        <p className="text-sm font-bold text-ink">MÜDEK PÇ</p>
+      </header>
+
+      {/* Mobile bottom navigation */}
+      <nav className="sm:hidden fixed bottom-0 left-0 right-0 z-20 bg-surface border-t border-border flex">
         {navItems.map(({ href, label, icon: Icon }) => {
           const active = href === '/' ? pathname === '/' : pathname.startsWith(href)
           return (
@@ -41,25 +81,18 @@ export default function Sidebar() {
               key={href}
               href={href}
               className={cn(
-                'flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors',
+                'flex-1 flex flex-col items-center justify-center py-2 gap-0.5 text-[10px] font-medium transition-colors',
                 active
-                  ? 'bg-primary/10 text-primary'
-                  : 'text-muted-foreground hover:bg-muted hover:text-ink',
+                  ? 'text-primary'
+                  : 'text-muted-foreground',
               )}
             >
-              <Icon className="w-4 h-4 shrink-0" />
-              {label}
+              <Icon className="w-5 h-5" />
+              <span>{label}</span>
             </Link>
           )
         })}
       </nav>
-
-      {/* Footer */}
-      <div className="px-6 py-4 border-t border-border">
-        <p className="text-xs text-muted-foreground">
-          Elektrik-Elektronik Müh.
-        </p>
-      </div>
-    </aside>
+    </>
   )
 }

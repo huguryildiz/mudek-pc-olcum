@@ -1,5 +1,9 @@
 # CLAUDE.md — MÜDEK Program Çıktıları Ölçüm Sistemi
 
+## UI Gereksinimleri
+
+- Uygulama **mobile portrait** uyumlu olmalıdır. Tüm sayfalarda ve bileşenlerde portrait modda telefon ekranı (≤480px) düzgün çalışmalı, yatay kaydırma olmamalı, dokunma hedefleri yeterince büyük olmalıdır.
+
 ## Proje Özeti
 
 Next.js 15 tabanlı mühendislik program çıktısı (PÇ) ölçüm ve raporlama uygulaması. Türkiye'nin mühendislik akreditasyon kurulu MÜDEK (ABET muadili) gerekliliklerine uygun BBO dosyası üretir. Şu an MVP/Phase 0: veritabanı yok, tüm durum bellek içi tekil nesne + JSON dosyasında tutulur.
